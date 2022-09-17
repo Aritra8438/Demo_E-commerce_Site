@@ -92,7 +92,7 @@ export default {
                             duration: 3000,
                             position: 'bottom-right',
                         });
-                        this.$router.push('/')
+                        this.$router.push('/login')
                     })
                     .catch(error => {
                         if (error.response) {
