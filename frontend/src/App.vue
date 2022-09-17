@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" :style="myStyle">
     <nav class="navbar is-dark">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>Bookish</strong></router-link>
@@ -74,7 +74,7 @@
       <router-view />
     </section>
 
-    <footer class="footer">
+    <footer class="footer" :style="myStyle">
       <p class="has-text-centered">Copyright (c) 2021</p>
     </footer>
   </div>
@@ -85,6 +85,9 @@ import axios from 'axios'
 export default {
   data() {
     return {
+      myStyle: {
+        backgroundColor: "#e8e0d5"
+      },
       showMobileMenu: false,
       search: "",
       querySet: [],

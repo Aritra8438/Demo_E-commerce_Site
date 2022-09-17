@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <section class="hero is-small is-dark mb-6">
+    <section class="hero is-small has-background-link mb-6">
       <div class="hero-body has-text-centered">
-        <p class="title mb-6">
+        <p class="title mb-6 has-text-white">
           Welcome to Bookish
         </p>
-        <p class="subtitle">
+        <p class="subtitle has-text-white">
           A demo E-commerce website for shopping books
         </p>
       </div>
@@ -24,7 +24,8 @@
             <img :src="product.get_thumbnail" alt="Oops">
             <h6 class="is-size-5 has-text-weight-bold">{{ product.name }}</h6>
             <p class="is-size-5 has-text-grey">₹{{ product.price }}</p>
-            <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4 center">View details
+            <router-link v-bind:to="product.get_absolute_url"
+              class="button is-dark mt-4 center is-link has-text-centered">View details
             </router-link>
           </figure>
         </div>
