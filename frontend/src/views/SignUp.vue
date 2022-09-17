@@ -4,25 +4,25 @@
             <div class="column is-4 is-offset-4">
                 <h1 class="title">Sign up</h1>
 
-                <form @submit.prevent="submitForm">
+                <form autocomplete="off" @submit.prevent="submitForm">
                     <div class="field">
                         <label>Username</label>
                         <div class="control">
-                            <input type="text" class="input" v-model="username">
+                            <input type="text" class="input" autocomplete="new-password" v-model="username">
                         </div>
                     </div>
 
                     <div class="field">
                         <label>Email Address</label>
                         <div class="control">
-                            <input type="email" class="input" v-model="emailId">
+                            <input type="email" class="input" autocomplete="new-password" v-model="emailId">
                         </div>
                     </div>
 
                     <div class="field">
                         <label>Password</label>
                         <div class="control">
-                            <input type="password" class="input" v-model="password">
+                            <input type="password" class="input" autocomplete="new-password" v-model="password">
                         </div>
                     </div>
 

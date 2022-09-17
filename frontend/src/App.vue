@@ -19,7 +19,7 @@
               <div class="field has-addons">
                 <div class="dropdown">
                   <input type="text" class="dropdown-input" placeholder="What are you looking for?" name="query"
-                    v-model="search" @input="getJson" autocomplete="off">
+                    v-model="search" @input="getSearch()" autocomplete="off">
                   <div class="dropdown-content" v-show="dropdown">
                     <div class="dropdown-item" v-for="(obj, index) in querySet" :key="index"
                       @mousedown="selectOption(obj)">
@@ -110,17 +110,50 @@ export default {
   updated() {
   },
   methods: {
-    getJson() {
-      this.dropdown = true;
+    getSearch() {
+      this.dropdown = false
+      this.checkEmptySearch();
+      if (this.search === '') {
+        return;
+      }
+      else {
+        this.getJson();
+        this.getElastic();
+      }
+    },
+    getElastic() {
       this.checkEmptySearch();
       axios
-        .get(this.url + this.search)
+        .get("/api/v1/search/" + this.search + "/")
         .then(response => {
-          this.querySet = response.data
+          for (let i = 0; i < response.data.length; i++) {
+            this.querySet.push(response.data[i].name)
+          }
+          this.querySet = this.removeDuplicates(this.querySet)
+          if (this.querySet.length === 0) this.dropdown = false;
+          else this.dropdown = true;
         })
         .catch(error => {
           console.log(error)
         })
+    },
+    getJson() {
+      this.checkEmptySearch();
+      this.querySet = [];
+      axios
+        .get(this.url + this.search)
+        .then(response => {
+          for (let i = 0; i < response.data.length; i++) {
+            this.querySet.push(response.data[i])
+          }
+          this.querySet = this.removeDuplicates(this.querySet)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    removeDuplicates(arr) {
+      return [...new Set(arr)];
     },
     toggleDropdown() {
       this.dropdown = !this.dropdown

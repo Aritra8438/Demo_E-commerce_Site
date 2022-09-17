@@ -43,7 +43,15 @@ INSTALLED_APPS = [
     'djoser',
     'corsheaders',
     'handler',
+    'search',
+    'django_elasticsearch_dsl',
 ]
+
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',

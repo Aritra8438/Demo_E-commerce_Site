@@ -5,18 +5,19 @@
                 <h1 class="title">Log In</h1>
 
                 <form @submit.prevent="submitForm">
-                    <div class="field">
-                        <label>Username</label>
-                        <label class="has-text-danger">*</label>
-                        <div class="control">
-                            <input type="text" class="input" v-model="username" required>
-                        </div>
-                    </div>
 
                     <div class="field">
                         <label>Email Address</label>
                         <div class="control">
                             <input type="email" class="input" v-model="emailId">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Username</label>
+                        <label class="has-text-danger">*</label>
+                        <div class="control">
+                            <input type="text" class="input" v-model="username" required>
                         </div>
                     </div>
 
