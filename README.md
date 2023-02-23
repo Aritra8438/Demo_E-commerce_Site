@@ -1,4 +1,4 @@
-# Demo E-commerce Site - Welcome! Go to master branch for the code.
+# Demo E-commerce Site - Welcome! Go to the master branch for the code.
 <p align="center">
   <br />
   <a href="https://github.com/Aritra8438/Demo_E-commerce_Site/tree/master"><img src="https://img.shields.io/badge/LICENSE-MIT-green" alt="MIT" /></a>
