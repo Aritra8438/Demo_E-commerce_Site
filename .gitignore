@@ -1,0 +1,40 @@
+# Ignore .idea folder
+.idea/
+
+# Ignore node_modules folder
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore build output
+dist/
+build/
+
+# Ignore environment variables
+.env
+
+# Ignore compiled source files
+*.class
+*.o
+*.so
+*.dll
+*.exe
+
+# Ignore package files
+*.jar
+*.war
+*.zip
+*.tar.gz
+
+# Ignore database files
+*.sqlite
+*.sqlite3
+*.sql
+
+# Ignore password file
+**/password.txt
